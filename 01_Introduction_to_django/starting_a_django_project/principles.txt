@@ -1,0 +1,43 @@
+Creating Your First Django App
+Starting a Django Project
+
+Now that we have a basic understanding of what Django is and how it works, let’s get started with creating a project.
+Django provides us with django-admin, a command-line utility that helps us with a variety of administrative tasks.
+We can use it with various commands by calling it in the terminal like this:
+
+django-admin <command> [options]
+
+Running django-admin help will provide a list of possible commands.
+
+A Django project can be easily created with the startproject command.
+It takes a couple of options– the name of the project and optionally the directory for our project.
+The full command would look like this:
+
+django-admin startproject projectname
+
+Django will then create a directory for the project, or the project root folder.
+
+my-project/
+  ├── my-project/
+  └── manage.py
+
+Inside the project root folder is a Python file, manage.py, that contains a collection of useful functions used to administer the project.
+This file performs the same actions as django-admin but is set specifically to the project. We can do a number of things with it, such as starting a server.
+
+Alongside the manage.py is another directory with the same name as the project.
+This folder is treated as a Python package because of the presence of __init__.py, and inside this directory contains important settings and configuration files for the project.
+
+We’ll start a project in this exercise, and in the next exercise we will go into more detail about the specific files that are created.
+Instructions
+1.
+
+Start a Django project called djangovet using the django-admin utility in the terminal.
+2.
+
+View the project directory that was created inside the file explorer.
+Click on the button the folder at the top left hand corner of the code editor expand the menu or select “Open file”.
+After you’ve explored the files, click “Check work” to pass this step and move on to the next exercise.
+
+Open up the folder djangovet in the file explorer.
+
+/home/lucas/code/LucasTymen/projects/codeAcademy/django/01_Introduction_to_django/starting_a_django_project/principles.txt
