@@ -1,0 +1,23 @@
+Creating Your First Django App
+What is a Web Framework?
+
+Let’s first establish what it means when we say Django is a web framework.
+
+Web frameworks are a type of software development tool that makes it easier and faster to develop web applications.
+They are a type of code library that provides code and patterns for database access, as well as templating systems for content.
+They promote code reuse, so we don’t have to write as much code to get a project running. Some features most web frameworks include are:
+
+    URL routing
+    Input form management and validation
+    Templating engines for HTML and CSS
+    Database configuration
+    Web security
+    Session repository and retrieval
+
+Out of the box, Django comes with an admin panel, a user authentication system, a database, and something called object-relational mapper (ORM) that helps a web application interact with a database.
+These are some of the “batteries” included in Django to help build projects faster without having to worry about which tools to use.
+
+Later we’ll see how we can bootstrap a fully featured web application in only a handful of commands.
+Instructions
+
+Take a look at the diagram to the right to see common parts of a web application that web frameworks can help you with.
