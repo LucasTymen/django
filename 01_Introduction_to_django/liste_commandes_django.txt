@@ -1,14 +1,34 @@
+============================ start & admin ============================
 django-admin <command> [options]
 django-admin help
 django-admin startproject projectname
 
+============================ database ============================
 python3 manage.py migrate
  python3 manage.py runserver 0.0.0.0:4001
  python3 manage.py runserver <port number>
 
 In the workspace browser, navigate to the admin page at localhost/admin
 
+============================ app ============================
 ==== ajouter une app :
 python3 manage.py startapp [myapp]
 ==> Add "[myapp].apps.VetofficeConfig" to the INSTALLED_APPS list inside settings.py.
 ==> par exemple : vetoffice.apps.VetofficeConfig
+
+============================ view ============================
+A simple view function would look like this:
+
+from django.shortcuts import render # <<== Import HttpResponse here
+
+# In views.py
+def index(request):
+  return HttpResponse("This is the response!")
+
+  exemple :
+from django.shortcuts import render
+# Import HttpResponse here
+from django.http import HttpResponse
+# Create your views here.
+def home(request):
+  return HttpResponse("Welcome to the Vet's office!")

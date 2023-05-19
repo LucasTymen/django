@@ -1,0 +1,72 @@
+Creating Your First Django App
+Creating a View for an App
+
+Earlier, we discussed the MTV pattern and the integral role that views play.
+They are the information brokers in a Django application that decides what data gets delivered to a template and displayed.
+More simply put, a view is a class or function that processes a request and sends a response back.
+
+In our veterinarian’s office example website, a customer might go to the /profile page of the website and their request gets passed to a view function to be processed.
+The view function may:
+
+    Check to see if the customer is logged in
+    Request their profile information from a database
+    Format the information in a template
+    Send back the profile page as an HTML file for the customer to view in their browser
+
+The view function does quite a bit of work!
+
+At the core, Django uses a protocol called, Hypertext Transfer Protocol, which is the foundation for data communication on the worldwide web.
+In Django, requests, and responses are handled as HttpRequest and HttpResponse objects from a module called django.http.
+
+When a page is requested:
+
+    Django creates an HttpRequest object that contains information about the request
+    Django loads the appropriate view, passing the HttpRequest as the first argument to the view function
+
+Each view function is responsible for returning an HttpResponse object.
+The HttpResponse response object can be the HTML contents of a web page, a redirect, an error, an XML document, an image, or just about anything that can display on a web page.
+
+A simple view function would look like this:
+
+# In views.py
+def index(request):
+  return HttpResponse("This is the response!")
+
+Above, we have an index() view function for our home page.
+When users visit our home page, the view function sends back an HttpResponse with the string "This is the response!" to be displayed on a web page.
+Instructions
+1.
+
+Import the HttpResponse module from django.http inside views.py.
+
+Add from django.http import HttpResponse at the top of views.py.
+2.
+
+Create a function named home() that takes request as an argument.
+Return an HttpResponse object with the string "Welcome to the Vet's office!".
+
+Below the import statement, write a function that looks like this:
+
+def home(request):
+  return HttpResponse("Here is a response")
+
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
+
+
+============================ view ============================
+A simple view function would look like this:
+
+from django.shortcuts import render # <<== Import HttpResponse here
+
+# In views.py
+def index(request):
+  return HttpResponse("This is the response!")
+
+  exemple :
+from django.shortcuts import render
+# Import HttpResponse here
+from django.http import HttpResponse
+# Create your views here.
+def home(request):
+  return HttpResponse("Welcome to the Vet's office!")
