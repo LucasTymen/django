@@ -1,0 +1,43 @@
+Creating Your First Django App
+Django Apps
+
+We’ve been talking about Django projects and apps for a while, but what exactly are apps? How are apps different from a project? Well, a Django app is a submodule to a project, that contains the code for a specific feature. In the submodule, we’ll find things like: a models.py file, a migration directory, and other files and directories related to the application. Django apps should be self-sufficient and in theory, can be picked up and placed in another project without any modification. A Django project refers to the entire code base and its parts. The Django project folder holds manage.py and the other module that includes settings.py.
+
+In a real-world example, think of a website for a veterinarian’s office as a Django project. It would consist of smaller apps, such as an appointment calendar, patient profiles, and perhaps a testimonial section. Apps are part of what makes Django projects so scalable. Since they should be entirely self-sufficient, they shouldn’t break any parts as more features are added to a project. A Django app can be created by running the startapp command in the project root directory, the directory with manage.py, and providing the name of the app as an additional option.
+
+python3 manage.py startapp myapp
+
+This will create a new directory called myapp alongside the project settings folder. Running startapp will result in the following folder structure.
+
+mysite/
+├── manage.py
+└── mysite/
+   ├── __init__.py
+   ├── settings.py
+   └── urls.py
+└── myapp/
+
+Inside our project root folder, we have our previous folder which held our project settings and a new folder for our app. Inside it are files related specifically for the app such as models.py and tests.py.
+
+In order for Django to be aware of the app’s existence, it needs to be added to the list of INSTALLED_APPS in the project’s settings.py file.
+
+INSTALLED_APPS = [
+  "myapp.apps.MyappConfig"
+]
+
+Instructions
+1.
+
+Change to the project root directory, djangovet, and create a Django app called vetoffice using the startapp command in the terminal.
+
+Change to the project root directory by running cd djangovet, then create an app with:
+
+python3 manage.py startapp vetoffice
+
+2.
+
+Add "vetoffice.apps.VetofficeConfig" to the INSTALLED_APPS list inside settings.py.
+
+Add “vetoffice.apps.VetofficeConfig” to the INSTALLED_APPS list in djangovet/settings.py after the existing apps.
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!

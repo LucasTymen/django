@@ -7,3 +7,8 @@ python3 manage.py migrate
  python3 manage.py runserver <port number>
 
 In the workspace browser, navigate to the admin page at localhost/admin
+
+==== ajouter une app :
+python3 manage.py startapp [myapp]
+==> Add "[myapp].apps.VetofficeConfig" to the INSTALLED_APPS list inside settings.py.
+==> par exemple : vetoffice.apps.VetofficeConfig
