@@ -1,0 +1,42 @@
+Creating Your First Django App
+Migrating the Database
+
+When we started the server, Django gave us an error message that there were unapplied migrations:
+
+You have 15 unapplied migration(s).
+Your project may not work properly until you apply the migrations for app(s): auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+A migration is a pending database change. As we saw in settings.py, by default, Django will have some apps installed.
+Some of these default apps, for example, the admin interface, use the database and the migrations must be applied to the SQLite database.
+
+Whenever we make changes to the model of the database, we must apply the changes by running python3 manage.py migrate.
+After applying the migration, when we run the server our errors are gone.
+
+By applying our migration, we have access to the admin app!
+The admin app comes pre-installed and can be navigated to since it has its URL provided in urls.py we saw earlier.
+At the moment there aren’t any admin users but we can still visit localhost/admin to see the admin login page.
+Instructions
+1.
+
+In the terminal, cd into the root project directory, djangovet/, and apply the database migration with python3 manage.py migrate in the terminal.
+After running the commands, please click “Check Work”.
+Checkpoint 2 Passed
+
+The migrate command must be run in the root project folder. Run cd djangovet to change to the root directory.
+2.
+
+Start the server on port 0.0.0.0:4001 and see that the error messages are gone!
+Checkpoint 3 Passed
+
+Start the server on port 4001 by running python3 manage.py runserver 0.0.0.0:4001 in the terminal.
+This must be done in the root project directory, djangovet/. Make sure to click “Check work” when you are ready!
+3.
+
+In the workspace browser, navigate to the admin page at localhost/admin.
+You should see an admin login page. Click on “Check work” when you are ready.
+Checkpoint 4 Passed
+
+Use the workspace browser to navigate to localhost/admin.
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
