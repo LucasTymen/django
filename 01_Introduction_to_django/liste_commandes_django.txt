@@ -1,0 +1,9 @@
+django-admin <command> [options]
+django-admin help
+django-admin startproject projectname
+
+python3 manage.py migrate
+ python3 manage.py runserver 0.0.0.0:4001
+ python3 manage.py runserver <port number>
+
+In the workspace browser, navigate to the admin page at localhost/admin
