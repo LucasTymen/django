@@ -4,7 +4,9 @@ Fortune Teller
 
 Let’s build a Fortune Telling web app!
 
-It’s always nice to get a random positive message to brighten up our day. We can use our newfound Django skills to make a website just for that! In this project, we will build a Django project from scratch using the MTV pattern. Whenever our website is loaded, Django will call on a view function to select a random fortune from a list and populate a template to send back to the client.
+It’s always nice to get a random positive message to brighten up our day.
+We can use our newfound Django skills to make a website just for that! In this project, we will build a Django project from scratch using the MTV pattern.
+Whenever our website is loaded, Django will call on a view function to select a random fortune from a list and populate a template to send back to the client.
 
 We’ll start with an empty workspace and build out our fortuneteller project step by step.
 Tasks
@@ -70,9 +72,11 @@ python3 manage.py startapp randomfortune
 
 6.
 
-Great job! The startapp command will create files and folders for the new app. We’ll have to add our new app, randomfortune to our list of installed apps for our Django project to be aware of it.
+Great job! The startapp command will create files and folders for the new app.
+We’ll have to add our new app, randomfortune to our list of installed apps for our Django project to be aware of it.
 
-In the code editor, open up settings.py inside fortuneteller/fortuneteller. Find the list named INSTALLED_APPS and add the config file for randomfortune by including "randomfortune.apps.RandomfortuneConfig" to the list.
+In the code editor, open up settings.py inside fortuneteller/fortuneteller.
+Find the list named INSTALLED_APPS and add the config file for randomfortune by including "randomfortune.apps.RandomfortuneConfig" to the list.
 
 After you add the app to the list, click “Save”.
 
@@ -86,9 +90,11 @@ INSTALLED_APPS = [
 Create a Template
 7.
 
-Our randomfortune app is now installed! To see a fortune in the browser, we’ll create an HTML template file that will be used to display our fortune in the browser. First, we will create the template directories to namespace the template.
+Our randomfortune app is now installed! To see a fortune in the browser, we’ll create an HTML template file that will be used to display our fortune in the browser.
+First, we will create the template directories to namespace the template.
 
-Inside the project app directory, randomfortune/, create a folder named, templates. Next, within the newly created, templates/, create a folder named randomfortune to namespace our template file.
+Inside the project app directory, randomfortune/, create a folder named, templates.
+Next, within the newly created, templates/, create a folder named randomfortune to namespace our template file.
 
 The resulting structure should look like:
 
@@ -96,14 +102,17 @@ randomfortune/
 └── templates/
     └── randomfortune/
 
-Use the file explorer to create a nested directory, templates/randomfortune inside the app directory, randomfortune/. Select the three dots beside frandomfortune and select “New Folder”.
+Use the file explorer to create a nested directory, templates/randomfortune inside the app directory, randomfortune/.
+Select the three dots beside frandomfortune and select “New Folder”.
 
 Screenshot of workspace showing how to hover over the nested "randomfortune" folder, to select 3 dots and then "New Folder"
 8.
 
 Let’s create the actual file which we will send to the client!
 
-Within the namespaced template folder, create an HTML file named, fortune.html. The new file will contain some markup to format our message. Paste in the following HTML which has some placeholder in the text which will allow us to see text in the browser:
+Within the namespaced template folder, create an HTML file named, fortune.html.
+The new file will contain some markup to format our message.
+Paste in the following HTML which has some placeholder in the text which will allow us to see text in the browser:
 
 <!DOCTYPE html>
 <html lang="en">
@@ -124,7 +133,8 @@ Within the namespaced template folder, create an HTML file named, fortune.html. 
 </body>
 </html>
 
-Take a second and look at the provided HTML. It contains some boilerplate HTML structure and some barebones CSS. Inside the <body> tags, there is placeholder text that we will soon replace with data.
+Take a second and look at the provided HTML. It contains some boilerplate HTML structure and some barebones CSS.
+Inside the <body> tags, there is placeholder text that we will soon replace with data.
 
 After you have pasted the HTML and have taken a look at it press “Save”. We’ll have to write the view functions and the URLconfig before we can see it.
 
@@ -134,7 +144,8 @@ Create a View Function
 
 To send fortune.html to our client, we’ll write a view function and send it when the page is requested.
 
-Inside the randomfortune app, open views.py. Define a new function named fortune() that takes a single parameter, request. In fortune(), return the render function with two arguments, the request and the path to fortune.html as a string, "randomfortune/fortune.html".
+Inside the randomfortune app, open views.py. Define a new function named fortune() that takes a single parameter, request.
+In fortune(), return the render function with two arguments, the request and the path to fortune.html as a string, "randomfortune/fortune.html".
 
 The fortune() function will look similar to:
 
@@ -167,7 +178,8 @@ from . import views
 
 12.
 
-After importing the necessary modules into urls.py, we will create a list of patterns for Django to match URLs against. Create a list called urlpatterns and set it as a blank list.
+After importing the necessary modules into urls.py, we will create a list of patterns for Django to match URLs against.
+Create a list called urlpatterns and set it as a blank list.
 
 Create a Python list by writing in urls.py:
 
@@ -177,7 +189,8 @@ urlpatterns = []
 
 Inside the list, we’ll add a route to the fortune() function using the path() function.
 
-Since we want to have our random fortune appear as our main page, provide an empty string, "", as the first argument to path(). Pass the view function, fortune(), as the second argument. Be sure to use dot notation since we are referencing the function from views.py!
+Since we want to have our random fortune appear as our main page, provide an empty string, "", as the first argument to path().
+Pass the view function, fortune(), as the second argument. Be sure to use dot notation since we are referencing the function from views.py!
 
 urlpatterns = [
   path("", views.functionName)
@@ -185,7 +198,8 @@ urlpatterns = [
 
 14.
 
-Now that we have our app’s URLconfig setup, we will have to import it in the project’s URLconfig for the URLs to be picked up by the Django project. We’ll have to import the include module to include the URL configuration file.
+Now that we have our app’s URLconfig setup, we will have to import it in the project’s URLconfig for the URLs to be picked up by the Django project.
+We’ll have to import the include module to include the URL configuration file.
 
 Inside fortuneteller/fortuneteller, import the include module from django.urls.
 
@@ -201,7 +215,8 @@ In the existing urlpatterns list, add another path() with the arguments:
 
 Click on “Save”, and cd into the root directory to start the development server again with python3 manage.py runserver 0.0.0.0:4001 and when you refresh the browser page, you should see fortune.html.
 
-Inside the project URLconfig, fortuneteller/fortuneteller/urls.py, include the randomfortune URLs, using a list named urlpatterns. The urlpatterns list will similar to:
+Inside the project URLconfig, fortuneteller/fortuneteller/urls.py, include the randomfortune URLs, using a list named urlpatterns.
+The urlpatterns list will similar to:
 
 urlpatterns = [
   # ... other paths
@@ -212,11 +227,14 @@ Note: If you’re not in the root folder, you won’t have access to manage.py, 
 Sending a Context to the Template
 16.
 
-Great! Our static fortune.html is sent whenever the page, localhost is requested. Now, we want to replace the text with a new message every time we load the page!
+Great! Our static fortune.html is sent whenever the page, localhost is requested.
+Now, we want to replace the text with a new message every time we load the page!
 
-First, start by creating a list of fortunes named fortuneList inside our app’s views.py file. Define it outside of the fortune() function.
+First, start by creating a list of fortunes named fortuneList inside our app’s views.py file.
+Define it outside of the fortune() function.
 
-Add some strings containing fortune-telling sayings in the fortuneList. Be as creative as you’d like! (There’s also some samples in the Hint if you need some inspiration)
+Add some strings containing fortune-telling sayings in the fortuneList.
+Be as creative as you’d like! (There’s also some samples in the Hint if you need some inspiration)
 
 Inside views.py, above the fortune() function add the following list:
 
@@ -236,7 +254,8 @@ fortuneList = [
 
 To select a random fortune from the list we’ll use a built-in Python function, random.choice().
 
-Import the random module at the top of views.py. Then inside the fortune() function create a variable named fortune and set it equal to random.choice(fortuneList).
+Import the random module at the top of views.py.
+Then inside the fortune() function create a variable named fortune and set it equal to random.choice(fortuneList).
 
 Use a Python import to include random at the top of views.py by including:
 
@@ -248,9 +267,11 @@ fortune = random.choice(fortuneList)
 
 18.
 
-Great! We now have a random fortune stored in fortune. To send it to the HTML template, we’ll create a context variable to send with the template.
+Great! We now have a random fortune stored in fortune.
+To send it to the HTML template, we’ll create a context variable to send with the template.
 
-Below where we set fortune, create a dictionary named context. In the dictionary, create a key named "fortune" and set fortune as the value.
+Below where we set fortune, create a dictionary named context.
+In the dictionary, create a key named "fortune" and set fortune as the value.
 
 Our context variable will look similar to:
 
@@ -269,7 +290,8 @@ return render(request, "pathto/template", context)
 Render Context Inside Template
 20.
 
-The last step to render the fortune in the template is to use the Django template language to replace the placeholder text. Inside fortune.html, between the <p></p> tags, replace the text with {{ fortune }}.
+The last step to render the fortune in the template is to use the Django template language to replace the placeholder text.
+Inside fortune.html, between the <p></p> tags, replace the text with {{ fortune }}.
 
 Click “Save”, and now whenever the context is passed to the template, the value of fortune will be placed in the template!
 
@@ -279,7 +301,8 @@ The <p> tag will look like:
 
 21.
 
-As the old saying goes: “From nothing, sprouts a Django project.”Take a moment to refresh the browser a few times. On each page reload you should see a new fortune appear in the browser!
+As the old saying goes: “From nothing, sprouts a Django project.”Take a moment to refresh the browser a few times.
+On each page reload you should see a new fortune appear in the browser!
 
 Optionally, you can continue to play around with the code and challenge yourself.
 
