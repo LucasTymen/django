@@ -1,0 +1,26 @@
+Creating Your First Django App
+Review
+
+Great! We just built a simple web application with Django.
+When we start up the development server, we will see a welcome message displayed when we navigate to localhost in the browser!
+
+In this lesson, we learned a lot about Django and how it simplifies making a dynamic database-driven web application. We learned:
+
+    How to use django-admin to start a project
+    startproject command automatically configures default applications and a browser
+    How to use the startapp command to create a Django app
+    How to install the app to the list of INSTALLED_APPS
+    How to write a view function to return a template with context
+    How to wire a view function to a URL for us to see
+
+In the following lessons, we’ll learn more features of the Django web framework to build robust web applications.
+Next, we’ll learn how to use additional syntax to make our templates more dynamic.
+Instructions
+
+Start Django’s development server on port 4001 and visit the homepage of our app in the browser at localhost.
+Try adding another view function for our app or adding additional contexts to the template file.
+Click on “Next” when you are ready to continue learning!
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
+Community Forums
+Still have questions? View this exercise's thread in the Codecademy Forums.
