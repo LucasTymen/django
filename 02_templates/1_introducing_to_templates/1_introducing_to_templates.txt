@@ -1,0 +1,11 @@
+The Convenience of Templates
+
+Django makes it easier for developers to create templates!
+
+Django uses templates to display information to users. In conventional web development, web pages are written with HTML. But if templates were written in pure HTML then we don’t really need Django.
+
+Rather, Django gives us Django Template Language (DTL) which lets us inject variables, logic, and control flow inside of our HTML - supercharging our HTML files to do so much more than provide static content.
+
+Django's MTV design pattern showing how models supply the data, views determine what data to show, and templates displaying the data
+
+Templates play an integral part of Django’s MTV design pattern, so you will look into finer detail, how this component relates to the overall process of creating a web app.
