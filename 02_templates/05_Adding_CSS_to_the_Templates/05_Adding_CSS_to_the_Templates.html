@@ -1,0 +1,81 @@
+<!--
+Templates
+Adding CSS to the Templates
+
+In most applications, HTML files will usually use a CSS file to modify how the webpage looks.
+While we won’t be covering CSS specifically in this exercise, we will be covering how to add CSS files to our templates as the process is different in Django templates compared to a normal HTML document.
+To learn more about CSS, we recommend our Learn CSS course.
+
+We need a folder to store our CSS files, this folder will be in the application’s main folder and called static/.
+This folder will hold assets like pictures and CSS files.
+Another folder will be created inside of static/ that will be named after our application. The full path should look like the one below:
+
+projectname/
+ |-- appname/
+     |-- templates/
+     |-- static/
+         |-- appname/
+             |-- file.css
+
+Once a CSS file is added to static/appname, it can be referenced within our templates inside of blocks formed in the base.html <head> elements.
+  This is because static files will not be passed down to children of the base.html template.
+  The files in our static/ folder should be loaded in the <header>. Therefore, we’ll add another block tag, like so:
+-->
+
+<!-- base.html -->
+<!DOCTYPE html>
+<head>
+  {% block head %}
+
+  {% endblock %}
+</head>
+...
+<!--
+Inside of the template we’ll be using, we first need to load in static files.
+This is typically done at the beginning of the file after extending from base.html.
+This will let us access all of our static files later. Then the block created from base.html can be added to the document.
+This is the block where the CSS will be loaded in.
+This is done by loading a CSS file as normal, except setting the href to a tag that says {% static 'appname/file.css' %}.
+It should look like the code below.
+-->
+
+<!-- template_example.html -->
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'appname/file.css' %}">
+{% endblock %}
+<!--
+
+Instructions
+1.
+
+Let’s go ahead and set up our folders and CSS file by doing the following:
+
+    In the vetoffice/ folder, add a static/ folder.
+    In the created static/ folder, add another folder named vetoffice/.
+    In the newly added vetoffice/, add a CSS file called style.css.
+
+Now that we have our style.css created, go ahead and change every <p> element to have red text color with the following:
+-->
+p {
+  color: red;
+}
+
+The file path to style.css should be vetoffice/static/vetoffice/style.css.
+2.
+
+Inside of base.html, add a block to the head (<head>) element that’s called head. Add the end of the block inside of the head element as well.
+
+The block should start like this {% block head %} and end like this {% endblock %}. This should all be in the head of base.html.
+3.
+
+base.html is now expecting some information from any file that extends it (like home.html). So, let’s now set up home.html:
+
+    Inside of home.html, load in static files under where base.html is extended from.
+    Add a head block that will be used to fill in base.html‘s own head block.
+    Inside your new head block, add a <link> with an href set to style.css using a tag ({% %}).
+
+Don’t forget to add the quotes around the tag being used for the href. The value of the href should be: "{% static 'vetoffice/style.css' %}".
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
