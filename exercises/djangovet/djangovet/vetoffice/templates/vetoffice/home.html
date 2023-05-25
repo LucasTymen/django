@@ -5,7 +5,10 @@
     <title>Vet Office</title>
   </head>
   <body>
-    <h1>Welcome to the Vet Office, {{ name }}</h1>
+    {% extends "vetoffice/base.html" %}
+    <!-- <h1>Welcome to the Vet Office, {{ name }}</h1> -->
+    {% block congtent %}
     <p>Welcome!</p>
+    {% endblock %}
   </body>
 </html>
