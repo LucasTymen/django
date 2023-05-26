@@ -1,0 +1,60 @@
+Templates
+Loops in Templates
+
+When dealing with a dictionary in a Django template, we can save time by taking advantage of DTL’s for loop to iterate over individual items.
+Loops in DTL work like regular Python for loops but still require tags.
+
+To write a loop in DTL we’ll need to use our tags {% %} and insert the syntax for a for loop. The syntax to start a for loop requires:
+
+    The for keyword.
+    The name of the new variables we’ll be creating in the loop.
+    An indicator saying in
+    The list we’ll be using in the loop.
+
+Those will all be listed out in that order, and will be followed with an {% endfor %} at the end of the loop. The loop syntax looks like:
+
+{% for item in list_name %}
+  <p>{{ item }}</p>
+{% endfor %}
+
+Inside the loop’s body, during each iteration, we can access the current key using the temporary variable key inside variable tags {{ }}.
+We’re free to manipulate the key as a variable using standard Python syntax.
+If our list contains dictionaries, we could even access the value of our dictionary if we change our loop:
+
+{% for key, value in dictionary_list %}
+  <p>{{ key }} : {{ value }}</p>
+{% endfor %}
+
+Using loops, we can greatly reduce the amount of HTML we need to write to display a lot of information!
+Instructions
+1.
+
+In views.py, we’re passing a list of dictionaries (pets) to the "home.html" template.
+We can loop through this list to display all the pets’ information on the page.
+
+First, navigate to home.html, and inside this template:
+
+    Create a {% for %} loop that:
+        has a temporary variable of pet
+        loops through pets
+    Add the {% endfor %} tag as well
+
+Since you’re working with a list, the general syntax for the for loop should look like:
+
+{% for individual_item in list_var %}
+
+{% endfor %}
+
+2.
+
+Inside of the loop, add a <p> element that displays the pet’s name and the type of animal, separated by a colon.
+  For example, we would want it to look like this: “Oreo: dog”.
+
+The <p> element goes inside the loop, here’s the general syntax:
+
+{% for individual_item in list_var %}
+  <p>{{ individual_item.first_property }}: {{ individual_item.second_property }}<<</p>
+{% endfor %}
+
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
