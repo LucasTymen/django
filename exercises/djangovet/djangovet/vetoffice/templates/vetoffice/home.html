@@ -7,6 +7,7 @@
 
 {% block content %}
   <p>Welcome, {{name}}!</p>
+  <p>Here is the current list of patients:</p>
   <!-- Add your if statement below: -->
 {% if pet.animal_type == "Dog" %}
   <p>The animal is a dog</p>
@@ -18,4 +19,9 @@
 <p>The animal is not a dog or cat</p>
 
 {% endif %}
+
+{% for pet in pets %}
+  <p>{{pet.petname}} -> {{pet.animal_type}}</p>
+{% endfor %}
+
 {% endblock %}
