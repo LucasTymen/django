@@ -1,0 +1,35 @@
+Templates
+Adding URLs to a Template
+
+When navigating between pages using HTML, we need the entire URL to be written out in a <a> element’s href attribute.
+  With Django, rather than using the full URL we get a shortcut by using tags and the name of predefined paths!
+  Later on, we’ll also cover how to pass along data in the URL, however, let’s first see the basic shortcut in action:
+
+<a href="{% url 'path_name' %}">Sample link</a>
+
+As can be seen above, the link looks very similar to a typical HTML link, except we modify the href to be set to a tag much like we did with CSS files.
+This tag is set to the type url followed by the path name as a string.
+
+When a path requires arguments to get to, like a username, it can be added to the href after the path.
+We won’t go into detail regarding this, but it would look like this:
+
+<a href="{% url 'path_name' username %}">User Profile</a>
+
+In this case, arguments provide additional information to the URL to access more specific pages.
+Some DTL functions require arguments while they can be optional in other places.
+The URL is a good instance of where arguments are optional, but not necessary unless the path has an argument.
+We’ll discuss arguments more in the next exercise.
+Instructions
+1.
+
+Notice that in urls.py we have a path for the home page with a name of "home".
+
+Now, navigate to base.html. Inside the <body> element:
+
+    Add an <a> element
+    This anchor element should link to the 'home' path (using href and a tag)
+    The <a>‘s text should display Vet Office
+
+The href for the URL should look like this: "{% url 'home' %}".
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
