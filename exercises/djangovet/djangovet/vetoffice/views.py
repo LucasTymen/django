@@ -9,5 +9,5 @@ pets = [
 
 # Create your views here.
 def home(request):
-   context = {"name": "<Put your name here>", "pets": pets}
+   context = {"name": "Djangoer", "pets": pets}
    return render(request, 'vetoffice/home.html', context)
