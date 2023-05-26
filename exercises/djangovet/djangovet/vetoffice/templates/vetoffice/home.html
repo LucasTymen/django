@@ -1,4 +1,4 @@
-{% extends 'vetoffice/base.html' %}
+{% extends "vetoffice/base.html" %}
 {% load static %}
 
 {% block head %}
@@ -6,6 +6,16 @@
 {% endblock %}
 
 {% block content %}
-  <!-- Edit the <p> element below -->
-  <p>Welcome, {{ name }}!</p>
+  <p>Welcome, {{name}}!</p>
+  <!-- Add your if statement below: -->
+{% if pet.animal_type == "Dog" %}
+  <p>The animal is a dog</p>
+
+{% elif pet.animal_type == "Cat" %}
+  <p>The animal is a cat</p>
+
+{% else %}
+<p>The animal is not a dog or cat</p>
+
+{% endif %}
 {% endblock %}
