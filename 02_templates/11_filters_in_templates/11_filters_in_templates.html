@@ -1,0 +1,54 @@
+Templates
+Filters in Templates
+https://docs.djangoproject.com/en/3.1/ref/templates/builtins/
+
+With Django, variables can be modified from within the template using a filter.
+Filters modify variables passed in from views.py without the use of traditional methods like JavaScript.
+There are plenty of filters that can be found in the Django documentation, but we’ll only cover a few in this lesson.
+An example filter can be seen below:
+
+<p>{{ username|upper }}</p>
+
+The filter is added onto a variable by using the | symbol inside of the variable tags with the variable.
+The symbol goes after the variable name, and is followed by the filter that you want to use.
+In the above example, the upper filter converts the variable’s value to all uppercase characters.
+
+Some filters also require arguments, however, arguments are handled differently with filters compared to how we handled arguments with URL.
+A filter with an argument can be seen here:
+
+{{ description|truncatewords_html:2 }}
+
+The truncatewords_html filter requires an argument and will shorten text down to the integer supplied by our argument.
+In our case, we want to display 2 words max.
+Any other words in the description variable will be replaced with .... We were able to supply our argument after the filter name separated by a :.
+
+Some filters also require certain data types in order to work.
+For instance, the time filter requires a variable of data type datetime.datetime.Now(), and will not work with any other data type.
+It is recommended to check out the documentation for a filter before using it to make sure you are using the proper data types and adding any necessary arguments.
+Instructions
+1.
+
+Let’s first apply a filter to the {{ name }} variable — add a filter that makes all the characters lowercased.
+
+You can find the list of filters in Django’s documentation. => https://docs.djangoproject.com/en/3.1/ref/templates/builtins/
+
+You’ll need to use the lower filter.
+2.
+
+Now, let’s increase the complexity.
+
+Apply a filter to pets variable inside the for loop:
+
+    Use the filter called dictsort
+    Provide the dictsort filter with an argument of "petname"
+
+The general syntax still applies. Make sure to separate your variable from your filter using an |.
+To supply an argument, add a : after the filter name and the value of your argument.
+
+Your code should look similar to:
+
+{% for item in list_example|filter_name:"provided argument" %}
+
+After passing this step, your list of pets are now alphabetically organized by their pet names!
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!

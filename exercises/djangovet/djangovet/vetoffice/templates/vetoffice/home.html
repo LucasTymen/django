@@ -20,7 +20,9 @@
 
 {% endif %}
 
-{% for pet in pets %}
+<p>{{ name | lower }}</p>
+
+{% for key in pets|dictsort:"petname" %}
   <p>{{pet.petname}} ==>> {{pet.animal_type}}</p>
 {% endfor %}
 
