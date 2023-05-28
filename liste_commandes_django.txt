@@ -63,3 +63,58 @@ projectname/
      |-- static/
          |-- appname/
              |-- file.css
+
+============================ URLS ============================
+projectname/
+ |-- appname/
+     |-- templates/
+     urls.py
+
+syntax:
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+   path('', views.home, name="home")
+]
+
+============================ FILTERS ============================
+https://docs.djangoproject.com/en/3.1/ref/templates/builtins/
+syntax:
+{{ description|truncatewords_html:2 }}
+<p>{{ username|upper }}</p>
+
+============================ BASE ============================
+projectname/
+ |-- appname/
+     |-- templates/
+     |-- static/
+         |-- appname/
+          base.html
+
+setting up:
+<!DOCTYPE html>
+<head>
+  <!-- Add your head block below: -->
+{% block head %}
+
+{% endblock %}
+</head>
+
+<body>
+  <a href="{% url 'home'%}">Vet Office</a>
+  <h1>Welcome to Vet Office!</h1>
+  {% block content %}
+  {% endblock %}
+
+  <a href='{{'home'}}'>
+
+</body
+
+
+============================ LOOPS ============================
+syntax:
+{% for key, value in dictionary_list %}
+  <p>{{ key }} : {{ value }}</p>
+{% endfor %}
