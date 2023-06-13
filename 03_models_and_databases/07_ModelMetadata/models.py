@@ -23,5 +23,6 @@ class Patient(models.Model):
   pet_name = models.CharField(max_length=200)
   age = models.IntegerField(default=0)
   owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
+
   class Meta:
     ordering=["pet_name"]

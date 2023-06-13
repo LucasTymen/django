@@ -3,7 +3,7 @@ Models and Databases
 Field Type Optional Arguments
 
 We can continue to customize our models by supplying fields with options, that specify how data can be inserted into the database.
-Django provides field option documentation (https://docs.djangoproject.com/en/3.1/topics/db/models/#field-options), which shows a huge list of these options. Let’s go over some common ones together!
+Django provides field option documentation (https://docs.djangoproject.com/en/4.1/topics/db/models/#field-options), which shows a huge list of these options. Let’s go over some common ones together!
 
 One common option is null that can take on a value of True or False.
 This null option tells the database if a field can be left intentionally void of information.
@@ -49,7 +49,7 @@ For our Flower instance, we can specify its color with the limited choices provi
 With choices we know exactly what data we can accept from users.
 
 We covered 3 options in this exercise, but remember, there are many more field options to explore!
-https://docs.djangoproject.com/en/3.1/topics/db/models/#field-options
+https://docs.djangoproject.com/en/4.1/topics/db/models/#field-options
 
 
 Instructions

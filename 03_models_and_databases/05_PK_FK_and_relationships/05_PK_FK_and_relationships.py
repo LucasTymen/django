@@ -29,7 +29,7 @@ This means we have a One to Many relationship, one Gardener for multiple Flowers
 ====>>>> https://en.wikipedia.org/wiki/One-to-many_%28data_model%29
 
 To make this connection known, we need to supply Flower with a foreign key of a Gardner, i.e. the Flower instances know which Gardener instance takes care of it.
-====>>>> https://docs.djangoproject.com/en/3.1/ref/models/fields/#foreignkey
+====>>>> https://docs.djangoproject.com/en/4.1/ref/models/fields/#foreignkey
 
 """
 
@@ -49,12 +49,12 @@ Notice that we added the gardener field using models.ForeignKey() and with argum
 The first argument is Gardener because that’s the model we want this foreign key to come from.
 Then we add on_delete=models.CASCADE to let Django know to delete the Flower instance if its connected Gardener instance is deleted.
 We’ll cover more about on_delete in a later lesson — for more information check out Django’s arguments documentation.
-====>>>> https://docs.djangoproject.com/en/3.1/ref/models/fields/#arguments
+====>>>> https://docs.djangoproject.com/en/4.1/ref/models/fields/#arguments
 
 Hypothetically, we could even supply Gardener with a foreign key as well if we wanted to link Gardener to another model, like a Garden for example!
 These foreign keys tell the database that a one-to-many relationship exists and the direction of this relationship.
 There are other types of relationships, but let’s implement a one-to-many relationship with our own models!
-====>>>> https://docs.djangoproject.com/en/3.1/topics/db/examples/
+====>>>> https://docs.djangoproject.com/en/4.1/topics/db/examples/
 
 
 Instructions
