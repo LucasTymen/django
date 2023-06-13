@@ -9,6 +9,7 @@ Some key questions are:
     How do different models relate to each other?
 
 As mentioned earlier, thinking through this process means that we’re coming up with a schema, which is a layout of the structure of our database represented by tables, similar to spreadsheets.
+https://en.wikipedia.org/wiki/Spreadsheet#Usage
 Each table stores the specific and crucial information about a model.
 
 Let’s work through a concrete example.
