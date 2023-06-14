@@ -4,6 +4,10 @@ class Owner(models.Model):
   first_name = models.CharField(max_length=30)
   last_name = models.CharField(max_length=30)
   phone = models.CharField(max_length=30)
+  def __str__(self):
+    return self.first_name + " " + self.last_name
+
+
 
 class Patient(models.Model):
   DOG = "DO"
@@ -23,5 +27,10 @@ class Patient(models.Model):
   pet_name = models.CharField(max_length=200)
   age = models.IntegerField(default=0)
   owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
+  def __str__(self):
+    return self.pet_name + ", " + self.animal_type
+
+
+
   class Meta:
-    ordering=["pet_name"]
+    ordering = ["pet_name"]
