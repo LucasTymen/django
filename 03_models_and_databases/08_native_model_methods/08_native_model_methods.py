@@ -12,6 +12,7 @@ If properties are what our models are, then methods are what our models do. For 
 In Python classes, which Django uses to create models, there are built-in methods we can override like the __str__ method (https://docs.djangoproject.com/en/4.1/ref/models/instances/#str).
 All this means is we are creating a method using the same name as the built-in one.
 This is how we, the programmer, take control, or “override”, the default behavior of the built-in version:
+"""
 
 class Gardener(models.Model):
   name = models.CharField(max_length=30)
@@ -19,6 +20,7 @@ class Gardener(models.Model):
   def __str__(self):
     return self.name
 
+"""
 Methods always require the first parameter to be self, then we can provide other optional parameters and add logic within the method body.
 In the next lesson, we’ll learn how useful overriding __str__ is when we need to retrieve instances of models from our database
 — by default, if we didn’t override __str__ printing our instances would generate output that’s hard to read like:
