@@ -1,0 +1,70 @@
+Learn
+Models and Databases
+Migrations - migrate
+
+With our migration file set up, it’s time to use the code in our file to make changes to our database.
+
+The command to execute at the terminal would be:
+
+python3 manage.py migrate
+
+Like makemigrations, if our project supports multiple apps, we can pass in the particular app name to the migrate command as well.
+For example:
+https://docs.djangoproject.com/en/3.1/ref/django-admin/#django-admin-migrate
+
+
+python3 manage.py migrate garden
+
+
+Where garden is the name of our app. We should see some output like:
+
+Operations to perform:
+  Apply all migrations: garden
+Running migrations:
+  Rendering model states... DONE
+  Applying garden.0001_initial... OK
+
+After executing the migrate command, our database is set up!
+Under the hood, Django is handling the SQL commands needed to make this migration happen — however, that’s beyond this lesson’s scope.
+
+If we need to reverse a migration, Django also makes this possible by specifying the migration we want to revert back to:
+
+python3 manage.py migrate <app_name> <migration_name>
+
+The <migration_name> would be something like 0001 or 0002 etc., depending on which migration we are reverting back to.
+We can use the command showmigrations to see a list of all the migrations.
+
+Let’s see all the migrations for the garden app:
+
+python3 manage.py showmigrations garden
+
+Output:
+
+0001_initial.py
+0002_gardenmap.py
+0003_gardenemployees.py
+
+Now let’s revert back to migration 0002_gardenmap.py, which would undo the 0003_gardenemployees.py migration.
+
+python3 manage.py migrate garden 0002
+
+Note that the migration number 0002 is used, but the entire name can be used as well such as 0002_gardenmap.
+
+However, in some cases, migrations cannot be unapplied, like if we dropped a table in a previous migration.
+In such cases, we’ll get an IrreversibleError. Check out Django’s documentation for more information.
+Instructions
+1.
+
+Double check the migration file in the migration folder to see 0001_initial.py there and ready to go.
+
+Run the migrate command in the terminal to finish the migration!
+
+Make sure to type out the command as provided after the $ in the terminal. The $ signifies the start of the command line.
+You can optionally provide vetoffice as an optional argument but it’s not necessary.
+
+Here’s the exact command:
+
+python3 manage.py migrate
+
+Concept Review
+Want to quickly review some of the concepts you’ve been learning? Take a look at this material's cheatsheet!
